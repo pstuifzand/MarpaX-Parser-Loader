@@ -40,6 +40,7 @@ sub load_parser {
 
     my $code = ${$code_fh->string_ref};
     eval $code;
+    die $@ if $@;
     return $package->new();
 }
 
